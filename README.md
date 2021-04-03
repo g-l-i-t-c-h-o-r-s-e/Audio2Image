@@ -1,4 +1,4 @@
-This script converts your audio into an umcompressed format and then encodes it into an uncompressed image, so that you can apply image/video filters to the data and databend it.
+This script converts your audio into an uncompressed format and then encodes it into an uncompressed image, so that you can apply image/video filters to the data and databend it.
 Also included are two other methods of doing this process, as well as the ability to bake/convert the output image back into a sharable audio file with the format of your choice.
 
 # Setup:
