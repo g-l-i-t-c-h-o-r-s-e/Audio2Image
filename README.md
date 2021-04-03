@@ -11,5 +11,5 @@ https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v4.2.1/ffpro
 # Modes:
 `EnableSecretGlitch` attemps to calculate the dimensions, not complete but yields alternative results. <br>
 `EnableFFmpegLuxification` applies internal Reverse Sonificiation inside of ffmpeg through pipes. <br>
-`Default` is enabled when above are both disabled or set to `0`; which is a brute force method of this process.
+`Default` is a brute force method of this process; which is enabled when above are both disabled or set to `0`.
 # Video Tutorial Coming Soon...
