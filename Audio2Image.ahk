@@ -67,14 +67,14 @@ SilenceDuration := "10.00"   ;duration of silence in seconds, can be very import
 ;===========================================================================================================================================;
 AudioFormat := "u8"          ;Check "ffmpeg.exe -formats" for more. The usual ones are s8, u8, s16le, s16be, u16le, u16be, u32le, u32be, etc
 ChannelCount := "2"          ;Muck about with these as you wish, not sure how much this will change things beyond being mono or stereo
-SampleRate := "16100"        ;Very important on how the effects and audio quality will overall sound, maybe more
+SampleRate := "44100"        ;Very important on how the effects and audio quality will overall sound, maybe more
 ;===========================================================================================================================================;
 ColorSpace := "rgb24"        ;Use rgb24 & rgb4ble or Check "ffmpeg.exe -pix_fmts"; it also tells u the bitcount of them on the side as well
 OutputFormat := ".tiff"      ;The output image format that our audio is contained in, use any uncompressed format you wish-
 ;I use xwd or tiff because ffmpegs bmp encoder seems to encode from bottom up; hence reversing the audio. DM me if you find a better format!~
 ;===========================================================================================================================================;
 BakeFormat := ".flac"        ;The final output audio format you would like to bake/compress your image into after you're all done! (Press F9)
-MakeUniqueFilename := 1      ;if set to 1, this will generate uniquely named output files so you can fill up your hard drive with shit lmao!
+MakeUniqueFilename := 0      ;if set to 1, this will generate uniquely named output files so you can fill up your hard drive with shit lmao!
 FFplayFilter := "volume=0.3" ;You can add a lowpass or whatever here too like "lowpass=300,volume=0.3" or anything else you wanna do, or not
 ;===========================================================================================================================================;
 ;===========================================================================================================================================;
@@ -87,7 +87,7 @@ SwapU32 := 0                 ;Dont fuck with this unless your U32 audio is way t
 ;===========================================================================================================================================;
 ;           If at any point you find an issue or a new discovery regarding to this process; feel free to reach me at Pandela#0002
 ;===========================================================================================================================================;
-EnableFFmpegLuxification := 1 ;Enables internal FFMpeg Reverse Sonification; i.e audio is processed by internal video filters through a pipe
+EnableFFmpegLuxification := 0 ;Enables internal FFMpeg Reverse Sonification; i.e audio is processed by internal video filters through a pipe
 VideoFilter := "frei0r=pixeliz0r:0.003" ;Edit as you please, correct frei0r usage is "frei0r=glow:20"
 ;NOTE: incorrect usage would be "frei0r=glow=20", make sure there is a colon after your filters name and each parameter.
 oldFFmpeg := A_ScriptDir . "\ffmpeg3.3.2.exe" ;This is the Version of FFMpeg with frei0r & more.
