@@ -374,7 +374,7 @@ if (AddSilence = 1) {
 If RegExMatch(ResInput,"(m4a|flac|aic|ogg|wav|mp2|mp3|mp4)") {
 	
 	CreateTemplateFile := ComSpec . " /c ffmpeg  -i " ResInput . " -f " . AudioFormat . " -ac " . ChannelCount . " -ar " . SampleRate . " -y itsacompression.party"
-	msgbox % CreateTemplateFile
+	;msgbox % CreateTemplateFile
 	runwait, %CreateTemplateFile%
 	
 	;Get the bitrate of the newly encoded uncompressed file.
