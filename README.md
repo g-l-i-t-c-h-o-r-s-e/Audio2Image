@@ -10,7 +10,7 @@ https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v4.2.1/ffpla
 https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v4.2.1/ffprobe-4.2.1-win-32.zip
 
 # Modes:
-`EnableSecretGlitch` attemps to calculate the dimensions, not complete but yields alternative results. <br>
+`EnableSecretGlitch` attempts to calculate the dimensions, not complete but yields alternative results. <br>
 `EnableFFmpegLuxification` applies internal Reverse Sonificiation inside of ffmpeg through pipes. <br>
 `Default` is the brute force method of this process; which is enabled when above are both disabled or set to `0`.
 
