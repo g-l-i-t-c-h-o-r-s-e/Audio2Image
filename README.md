@@ -3,7 +3,7 @@ Also included are two other methods of doing this process, as well as the abilit
 
 # Setup:
 Grab a copy of AHk Studio (You can use ALT+R to run the script quickly): https://github.com/maestrith/AHK-Studio/archive/master.zip <br>
-Unzip ffmpeg3.3.2.zip and place ffmpeg3.3.2.exe in the same folder as this script.                                                                                                                    
+Unzip `ffmpeg3.3.2.zip` and place `ffmpeg3.3.2.exe` in the same folder as this script.                                                                                                                    
 Download, unzip and place all three of these .exes in the same folder as well                                                                                                                                                          
 https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v4.2.1/ffmpeg-4.2.1-win-32.zip                                                                                                       
 https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v4.2.1/ffplay-4.2.1-win-32.zip                                                                                          
