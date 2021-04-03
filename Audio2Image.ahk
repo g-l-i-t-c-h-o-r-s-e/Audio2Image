@@ -59,11 +59,11 @@ FileDelete, %A_ScriptDir%/silence.wav ;remove last silence.wav to avoid war with
 ;===========================================================================================================================================;
 ;These are settings you can fool around with; be creative! Just be careful with your ears. I have FFplay volume set to 0.3 for a reason lol
 ;===========================================================================================================================================;
-BaseDimension := "1000" ;<~~ ;Dimension to start out with, needs to be biggish; this where the real magic happens right here lemme tell ya!
+BaseDimension := "1630" ;<~~ ;Dimension to start out with, needs to be biggish; this where the real magic happens right here lemme tell ya!
 ;===========================================================================================================================================;
 SilenceFile := "silence.wav" ;name of generated silence file, dont change if you dont want to. Silence can also help repair unwanted glitches
 AddSilence := 0              ;if set to zero obviously it doesnt add silence u dingus, can also change how your glitch ultimately sounds o3o
-SilenceDuration := "10.00"   ;duration of silence in seconds, can be very important in helping to make a properly shaped/sized output image
+SilenceDuration := "30.00"   ;duration of silence in seconds, can be very important in helping to make a properly shaped/sized output image
 ;===========================================================================================================================================;
 AudioFormat := "u8"          ;Check "ffmpeg.exe -formats" for more. The usual ones are s8, u8, s16le, s16be, u16le, u16be, u32le, u32be, etc
 ChannelCount := "2"          ;Muck about with these as you wish, not sure how much this will change things beyond being mono or stereo
@@ -80,7 +80,7 @@ FFplayFilter := "volume=0.3" ;You can add a lowpass or whatever here too like "l
 ;===========================================================================================================================================;
 ;===========================================================================================================================================;
 ;~~~~~~~~~~~~~~~~~~~~~~~~~~> ;This Method Will Only Likely Work With The U8 Format And rgb24 In Its Current State, Be Advised, RIP Your Ears
-EnableSecretGlitch := 0      ;Do It I Dare You, you know you wanna try out my terribly written code with math I obviously dont understand lol
+EnableSecretGlitch := 0    ;Do It I Dare You, you know you wanna try out my terribly written code with math I obviously dont understand lol
 ImageBitsPerPixel := "24"    ;Probably shouldnt mess with this unless above is 1; and u use a colorspace other than rgb24 (24 bits per pixel)
 SwapDimensions := 0          ;Change this to 1 if you want to swap the dimensions; which creates a different sounding type of glitch >:3
 SwapU32 := 0                 ;Dont fuck with this unless your U32 audio is way too loud and pure noise, this fixes it for some reason.
@@ -136,13 +136,14 @@ if (AddSilence = 1) && !FileExist(SilenceFile) {
 	
 	;if input file is wav then skip encoding.
 	if RegExMatch(InputFile, ".wav") {
-		NewWav := InputFile 	
+		NewWav := FileInput
+		;msgbox % NewWav
 	}
 	;Generate Silence and pad it at the end of the input file.
 	;msgbox, Generating Silence...
 	MakeSilence := "ffmpeg -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=" . SampleRate . " -t " . SilenceDuration . " -y " . SilenceFile
 	ConcatTXT := "cmd.exe /c (echo file `'" . NewWav . "`' & echo file `'" . SilenceFile . "`' )>list.txt"
-	FinalFile := "ffmpeg -safe 0 -f concat -i list.txt -c copy -y " . PaddedOutput
+	FinalFile := "cmd.exe /c ffmpeg -safe 0 -f concat -i list.txt -c copy -y " . PaddedOutput
 	runwait, %MakeSilence%
 	runwait, %ConcatTXT%
 	runwait, %FinalFile%
@@ -364,16 +365,16 @@ ExitApp
 ;Hell I'll even reward you for your efforts, swear on me mum.
 ItsNotABugItsAFeature:
 ResInput := chr(0x22) . InputFile . chr(0x22)
-
 if (AddSilence = 1) {
 	ResInput := chr(0x22) . PaddedOutput . chr(0x22)
+	msgbox % ResInput
 	
 }
 
 If RegExMatch(ResInput,"(m4a|flac|aic|ogg|wav|mp2|mp3|mp4)") {
 	
 	CreateTemplateFile := ComSpec . " /c ffmpeg  -i " ResInput . " -f " . AudioFormat . " -ac " . ChannelCount . " -ar " . SampleRate . " -y itsacompression.party"
-	;msgbox % CreateTemplateFile
+	msgbox % CreateTemplateFile
 	runwait, %CreateTemplateFile%
 	
 	;Get the bitrate of the newly encoded uncompressed file.
