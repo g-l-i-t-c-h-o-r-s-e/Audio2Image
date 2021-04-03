@@ -3,7 +3,6 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance,Force ;Self Explenatory
-;https://cdn.discordapp.com/attachments/815770122068426802/823710706414911508/FFMPreg_AHK_Audio2Image_Tootoriale.mp4
 
 ;                    ~Audio2Image.ahk v1.88~
 ;
