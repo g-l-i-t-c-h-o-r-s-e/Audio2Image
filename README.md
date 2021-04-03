@@ -14,7 +14,7 @@ https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v4.2.1/ffpro
 `EnableFFmpegLuxification` applies internal Reverse Sonificiation inside of ffmpeg through pipes. <br>
 `Default` is the brute force method of this process; which is enabled when above are both disabled or set to `0`.
 
-# Hotkeys
+# Hotkeys:
 `F10` Playback Your Image/Audio <br>
 `F9`  Bake/Convert Your Image Back Into Audio <br>
 `F8`  Kill Script <br>
