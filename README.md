@@ -8,4 +8,8 @@ https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v4.2.1/ffmpe
 https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v4.2.1/ffplay-4.2.1-win-32.zip                                                                                          
 https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v4.2.1/ffprobe-4.2.1-win-32.zip
 
+# Modes:
+`EnableSecretGlitch` attemps to calculate the dimensions, not complete but yields alternative results. <br>
+`EnableFFmpegLuxification` Applies internal Reverse Sonificiation inside of ffmpeg through pipes.
+
 # Video Tutorial Coming Soon...
