@@ -20,3 +20,6 @@ https://github.com/ffbinaries/ffbinaries-prebuilt/releases/download/v4.2.1/ffpro
 `F8`  Kill Script <br>
 
 # Video Tutorial Coming Soon...
+
+You can also run `ffmpeg -filters` to list all filters; and `ffmpeg -h filter=boxblur` for exmaple, to check the possible parameters for the filter.<br>
+Which would be used like `ffmpeg -i input.mp4 -vf boxblur=luma_radius=2:luma_power=2` or whatever :b
